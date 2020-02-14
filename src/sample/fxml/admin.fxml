@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.AdminController">
+   <children>
+      <Label layoutX="183.0" layoutY="74.0" prefHeight="32.0" prefWidth="265.0" style="-fx-background-color: #FF7429;" text="Welcome to the HQ" textAlignment="CENTER" textFill="#2e3348" textOverrun="CENTER_WORD_ELLIPSIS">
+         <font>
+            <Font name="Lucida Bright" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="157.0" layoutY="114.0" text="First of All what would you like?" textFill="#ff7429">
+         <font>
+            <Font name="Lucida Bright" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="testButton" layoutX="340.0" layoutY="258.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="201.0" style="-fx-background-color: #FF7429;" text="Pass the test" textAlignment="CENTER" textFill="#2e3348" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="chatButton" layoutX="340.0" layoutY="160.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="201.0" style="-fx-background-color: #FF7429;" text="Discuss about events of History" textAlignment="CENTER" textFill="#2e3348" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="addInf" layoutX="96.0" layoutY="258.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="201.0" style="-fx-background-color: #FF7429;" text="Add extra information about History" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="infButton" layoutX="96.0" layoutY="160.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="201.0" style="-fx-background-color: #FF7429;" text="See the information about History of Qazaqstan" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="homeButton" layoutX="44.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="69.0" style="-fx-background-color: #FF7429;" text="Back" textFill="#2e3348">
+         <font>
+            <Font name="Lucida Bright" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="login" layoutX="332.0" layoutY="21.0" prefHeight="25.0" prefWidth="245.0" text="admin" textFill="#ff7429">
+         <font>
+            <Font name="Lucida Bright" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
