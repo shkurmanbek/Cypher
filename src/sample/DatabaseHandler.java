@@ -38,7 +38,6 @@ public class DatabaseHandler extends Configs{
             prSt.setString(4, user.getPassword());
             prSt.setString(5, user.getLocation());
             prSt.setString(6, user.getGender());
-
             prSt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

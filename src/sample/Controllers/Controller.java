@@ -16,7 +16,7 @@ import sample.DatabaseHandler;
 import sample.User;
 import sample.animations.Shake;
 
-public class Controller {
+public class Controller extends WelcomePageController{
 
         @FXML
         private ResourceBundle resources;
@@ -35,7 +35,6 @@ public class Controller {
 
         @FXML
         private Button loginSignUpButton;
-
         @FXML
         void initialize() {
             signInButton.setOnAction(event -> {
@@ -43,10 +42,11 @@ public class Controller {
                 String loginText = login_field.getText().trim();
                 String loginPassword = password_field.getText().trim();
 
-                if(!loginText.equals("") && !loginPassword.equals(""))
-                    loginUser(loginText, loginPassword);
                 if(loginText.equals("admin") && loginPassword.equals("123456"))
                     openNewScene("/sample/fxml/admin.fxml");
+                else if(!loginText.equals("") && !loginPassword.equals(""))
+                    loginUser(loginText, loginPassword);
+
                 else
                     System.out.println("Login and password is empty!");
 
@@ -99,7 +99,6 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         Parent root = loader.getRoot();
         Stage stage = new Stage();

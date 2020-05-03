@@ -4,32 +4,71 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ChatControllerClient">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ChatControllerClient">
    <children>
-      <Label layoutX="90.0" layoutY="14.0" prefHeight="32.0" prefWidth="139.0" text="Enter your text" textFill="#f39c63">
-         <font>
-            <Font name="Lucida Bright" size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="button" layoutX="224.0" layoutY="221.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Send">
+      <Button fx:id="button" layoutX="256.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #f39c63;" text="Send">
          <font>
             <Font name="Lucida Bright" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="login" layoutX="22.0" layoutY="282.0" prefHeight="35.0" prefWidth="275.0" text="Login" textFill="#f39c63">
+      <Label fx:id="login" layoutX="371.0" layoutY="39.0" prefHeight="35.0" prefWidth="285.0" text="Login" textFill="#f39c63">
          <font>
             <Font name="Lucida Bright" size="29.0" />
          </font>
       </Label>
-      <TextField fx:id="chatField" layoutX="27.0" layoutY="46.0" prefHeight="165.0" prefWidth="245.0" text="Hello world!" />
-      <TextArea fx:id="textArea" layoutX="331.0" layoutY="14.0" prefHeight="372.0" prefWidth="258.0" />
-      <Button fx:id="button1" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Back">
+      <TextField fx:id="chatField" layoutX="27.0" layoutY="56.0" prefHeight="155.0" prefWidth="285.0" text="Hello world!" />
+      <TextArea fx:id="textArea" layoutX="422.0" layoutY="134.0" prefHeight="343.0" prefWidth="260.0" />
+      <Button fx:id="button1" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: #f39c63;" text="Back">
          <font>
             <Font name="Lucida Bright" size="12.0" />
          </font>
       </Button>
+      <Button fx:id="button2" layoutX="250.0" layoutY="269.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="62.0" style="-fx-background-color: #f39c63;" text="Decrypt">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="button3" layoutX="16.0" layoutY="269.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" style="-fx-background-color: #f39c63;" text="Caesar's Encryption">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="vButton" layoutX="16.0" layoutY="321.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" style="-fx-background-color: #f39c63;" text="Visionary Encryption">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="dvButton" layoutX="253.0" layoutY="321.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Decrypt">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="keyField" layoutX="173.0" layoutY="320.0" prefHeight="25.0" prefWidth="62.0" text="Keyword" />
+      <Label layoutX="428.0" layoutY="86.0" prefHeight="32.0" prefWidth="93.0" text="Chat field" textFill="#f39c63">
+         <font>
+            <Font name="Lucida Bright" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="sButton" layoutX="16.0" layoutY="371.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" style="-fx-background-color: #f39c63;" text="Shannon compression">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="dsButton" layoutX="173.0" layoutY="371.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="166.0" style="-fx-background-color: #f39c63;" text="Shannon decompression">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="shift" layoutX="173.0" layoutY="268.0" prefHeight="25.0" prefWidth="62.0" text="Shift" />
+      <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="713.0" layoutY="18.0">
+         <image>
+            <Image url="@../assets/Cypher%20logo.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

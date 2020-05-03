@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ChatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ChatController">
    <children>
-      <Button fx:id="button" layoutX="257.0" layoutY="158.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Send">
+      <Button fx:id="button" layoutX="279.0" layoutY="264.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Send">
          <font>
             <Font name="Lucida Bright" size="12.0" />
          </font>
@@ -21,17 +21,54 @@
             <Font name="Lucida Bright" size="29.0" />
          </font>
       </Label>
-      <TextField fx:id="chatField" layoutX="27.0" layoutY="65.0" prefHeight="83.0" prefWidth="275.0" text="Hello world!" />
-      <TextArea fx:id="textArea" layoutX="331.0" layoutY="14.0" prefHeight="372.0" prefWidth="258.0" />
+      <TextField fx:id="chatField" layoutX="23.0" layoutY="63.0" prefHeight="187.0" prefWidth="302.0" text="Hello world!" />
+      <TextArea fx:id="textArea" layoutX="375.0" layoutY="58.0" prefHeight="206.0" prefWidth="358.0" />
       <Button fx:id="button1" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Back">
          <font>
             <Font name="Lucida Bright" size="12.0" />
          </font>
       </Button>
-      <TableView fx:id="table" layoutX="27.0" layoutY="191.0" prefHeight="180.0" prefWidth="275.0">
+      <Button fx:id="button3" layoutX="18.0" layoutY="311.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" style="-fx-background-color: #f39c63;" text="Caesar's Encryption">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="button2" layoutX="263.0" layoutY="311.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Decrypt">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="vButton" layoutX="18.0" layoutY="355.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" style="-fx-background-color: #f39c63;" text="Visionary Encryption">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="dvButton" layoutX="263.0" layoutY="355.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="62.0" style="-fx-background-color: #f39c63;" text="Decrypt">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="keyField" layoutX="178.0" layoutY="354.0" prefHeight="25.0" prefWidth="62.0" text="Keyword" />
+      <Label layoutX="425.0" layoutY="25.0" prefHeight="32.0" prefWidth="93.0" text="Chat field" textFill="#f39c63">
+         <font>
+            <Font name="Lucida Bright" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="sButton" layoutX="18.0" layoutY="405.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" style="-fx-background-color: #f39c63;" text="Shannon compression">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="dsButton" layoutX="174.0" layoutY="404.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #f39c63;" text="Shannon decompression">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="shift" layoutX="178.0" layoutY="310.0" prefHeight="25.0" prefWidth="62.0" text="Shift" />
+      <TableView fx:id="table" layoutX="377.0" layoutY="292.0" prefHeight="269.0" prefWidth="358.0">
         <columns>
-          <TableColumn fx:id="columnID" prefWidth="38.0" text="id" />
-          <TableColumn fx:id="columnNick" prefWidth="236.0" text="nickname" />
+          <TableColumn fx:id="columnID" prefWidth="44.0" text="ID" />
+          <TableColumn fx:id="columnNick" prefWidth="313.0" text="Nickname" />
         </columns>
       </TableView>
    </children>

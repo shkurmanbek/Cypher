@@ -25,7 +25,6 @@ public abstract class NetworkConnection {
     }
     public void send(Serializable data) throws Exception{
         connThread.out.writeObject(data);
-
     }
     public void closeConnection() throws Exception{
         connThread.socket.close();

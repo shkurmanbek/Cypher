@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ShannonFanoController">
+   <children>
+      <Line endX="129.5" endY="-2.0" layoutX="245.0" layoutY="91.0" startX="72.0" startY="-2.0" stroke="#f39c63">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Line>
+      <Polyline fill="#f39c63" layoutX="215.0" layoutY="204.0" points="163.0, -116.0, 130.0, -97.0, 191.0, -116.0, 130.0, -131.0" strokeType="INSIDE" />
+      <TextField fx:id="textField" layoutX="43.0" layoutY="72.0" prefHeight="37.0" prefWidth="260.0" promptText="Enter any text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Label layoutX="197.0" layoutY="6.0" prefHeight="50.0" prefWidth="394.0" text="Shannon-Fano Compression" textFill="#f39c63">
+         <font>
+            <Font name="Lucida Bright" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="compress" layoutX="327.0" layoutY="72.0" mnemonicParsing="false" opacity="0.0" prefHeight="34.0" prefWidth="91.0" />
+      <TextField fx:id="compressedText" layoutX="418.0" layoutY="73.0" prefHeight="34.0" prefWidth="357.0" promptText="Compressed text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Line endX="33.0" endY="38.0" layoutX="573.0" layoutY="117.0" startX="33.0" startY="-2.0" stroke="#f39c63">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Line>
+      <Polyline fill="#f39c63" layoutX="242.0" layoutY="523.0" points="87.0, -116.0, 130.0, -97.0, 39.0, -116.0, 130.0, -131.0" strokeType="INSIDE" />
+      <Polyline fill="#f39c63" layoutX="359.0" layoutY="250.0" points="243.0, -73.0, 217.0, -124.0, 243.0, -95.0, 262.0, -124.0" strokeType="INSIDE" />
+      <Line endX="129.5" endY="-2.0" layoutX="264.0" layoutY="410.0" startX="33.0" startY="-2.0" stroke="#f39c63">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Line>
+      <Label layoutX="632.0" layoutY="123.0" prefHeight="51.0" prefWidth="166.0" text="Adding redudant bits with Hamming(7,4)" textFill="#f39c63" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="14.0" />
+         </font>
+      </Label>
+      <Line endX="33.0" endY="70.0" layoutX="580.0" layoutY="318.0" startX="33.0" startY="20.0" stroke="#f39c63">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Line>
+      <Polyline fill="#f39c63" layoutX="370.0" layoutY="476.0" points="243.0, -73.0, 217.0, -124.0, 243.0, -95.0, 262.0, -124.0" strokeType="INSIDE" />
+      <Label layoutX="633.0" layoutY="338.0" prefHeight="51.0" prefWidth="133.0" text="Noisy channel" textFill="#f39c63" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="18.0" />
+         </font>
+      </Label>
+      <Line endX="33.0" endY="70.0" layoutX="120.0" layoutY="318.0" startX="33.0" startY="34.0" stroke="#f39c63">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Line>
+      <Polyline fill="#f39c63" layoutX="-89.0" layoutY="533.0" points="243.0, -190.0, 223.0, -157.0, 243.0, -171.0, 260.0, -157.0" strokeType="INSIDE" />
+      <Label layoutX="43.0" layoutY="130.0" prefHeight="51.0" prefWidth="109.0" text="Receiver" textFill="#f39c63" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="31.0" prefHeight="51.0" prefWidth="126.0" text="Transmitter" textFill="#f39c63" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.0" layoutY="429.0" prefHeight="51.0" prefWidth="174.0" text="Detecting errors by finding syndromes" textFill="#f39c63" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="addBits" layoutX="579.0" layoutY="115.0" mnemonicParsing="false" opacity="0.0" prefHeight="66.0" prefWidth="54.0" />
+      <Button fx:id="errorButton" layoutX="587.0" layoutY="330.0" mnemonicParsing="false" opacity="0.0" prefHeight="81.0" prefWidth="54.0" />
+      <Button fx:id="correctError" layoutX="133.0" layoutY="341.0" mnemonicParsing="false" opacity="0.0" prefHeight="51.0" prefWidth="37.0" />
+      <Button fx:id="detectButton" layoutX="292.0" layoutY="394.0" mnemonicParsing="false" opacity="0.0" prefHeight="34.0" prefWidth="98.0" />
+      <Label layoutX="171.0" layoutY="338.0" prefHeight="51.0" prefWidth="242.0" text="Correcting errors with founded syndromes" textFill="#f39c63" wrapText="true">
+         <font>
+            <Font name="Lucida Bright" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="homeButton" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #f39c63;" text="Back">
+         <font>
+            <Font name="Lucida Bright" size="12.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="redudantText" layoutX="418.0" layoutY="174.0" prefHeight="164.0" prefWidth="344.0" promptText="Redudant bits have successfully added" />
+      <TextArea fx:id="errorText" layoutX="427.0" layoutY="403.0" prefHeight="164.0" prefWidth="344.0" promptText="Error occured during transmission" />
+      <TextArea fx:id="detectedText" layoutX="14.0" layoutY="389.0" prefHeight="164.0" prefWidth="260.0" promptText="Errors have detected " />
+      <TextArea fx:id="correctedText" layoutX="25.0" layoutY="174.0" prefHeight="164.0" prefWidth="357.0" promptText="Text has successfully corrected" />
+   </children>
+</AnchorPane>

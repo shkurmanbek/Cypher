@@ -3,6 +3,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import sample.DatabaseHandler;
 import sample.User;
 
 public class WelcomePageController {
@@ -26,19 +29,16 @@ public class WelcomePageController {
     private Label login;
 
     @FXML
-    private Button testButton;
-
-    @FXML
     private Button chatButton;
-
-    @FXML
-    private Button addInf;
 
     @FXML
     private Button infButton;
 
     @FXML
     private Button homeButton;
+
+    @FXML
+    private Button comButton;
 
     @FXML
     void initialize() {
@@ -64,6 +64,10 @@ public class WelcomePageController {
         infButton.setOnAction(event -> {
             openNewScene("/sample/fxml/app.fxml");
         });
+
+        comButton.setOnAction(event -> {
+            openNewScene("/sample/fxml/shannonFano.fxml");
+        });
     }
     public void openNewScene(String window){
         homeButton.getScene().getWindow().hide();
@@ -75,7 +79,6 @@ public class WelcomePageController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         Parent root = loader.getRoot();
         Stage stage = new Stage();

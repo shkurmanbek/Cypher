@@ -7,65 +7,114 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #FF7429;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FF7429;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
     <children>
       <Button fx:id="homeButton" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: #2e3348;" text="Back" textFill="#ff7429">
          <font>
             <Font name="Lucida Bright" size="18.0" />
          </font>
       </Button>
-        <AnchorPane layoutX="-6.0" layoutY="87.0" prefHeight="313.0" prefWidth="707.0" style="-fx-background-color: #2e3348;">
+        <AnchorPane layoutY="86.0" prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #2e3348;">
          <children>
-            <Label layoutX="21.0" layoutY="14.0" prefHeight="47.0" prefWidth="180.0" text="October Revolution" textFill="#ff7429">
+            <Label layoutX="24.0" layoutY="14.0" prefHeight="47.0" prefWidth="168.0" text="Ceaser's Cipher" textFill="#ff7429">
                <font>
-                  <Font name="Lucida Bright" size="18.0" />
+                  <Font name="Lucida Bright" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="218.0" layoutY="14.0" prefHeight="47.0" prefWidth="86.0" text="Civil War" textFill="#ff7429">
+            <Label layoutX="228.0" layoutY="20.0" prefHeight="35.0" prefWidth="125.0" text="Porta Cipher" textFill="#ff7429">
                <font>
-                  <Font name="Lucida Bright" size="19.0" />
+                  <Font name="Lucida Bright" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="581.0" layoutY="14.0" prefHeight="47.0" prefWidth="49.0" text="USSR" textFill="#ff7429">
+            <Label layoutX="599.0" layoutY="24.0" prefHeight="28.0" prefWidth="161.0" text="ROT13 Cipher" textAlignment="CENTER" textFill="#ff7429">
                <font>
-                  <Font name="Lucida Bright" size="18.0" />
+                  <Font name="Lucida Bright" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="390.0" layoutY="14.0" prefHeight="47.0" prefWidth="72.0" text="1st WW" textFill="#ff7429">
+            <Label layoutX="410.0" layoutY="20.0" prefHeight="35.0" prefWidth="161.0" text="Baconian Cipher" textFill="#ff7429">
                <font>
-                  <Font name="Lucida Bright" size="19.0" />
+                  <Font name="Lucida Bright" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="octButton" layoutX="24.0" layoutY="65.0" mnemonicParsing="false" prefHeight="167.0" prefWidth="174.0" text="Button" visible="false" />
-            <ImageView fitHeight="174.0" fitWidth="174.0" layoutX="24.0" layoutY="61.0">
+            <Button fx:id="button1" layoutX="24.0" layoutY="65.0" mnemonicParsing="false" opacity="0.0" prefHeight="167.0" prefWidth="174.0" text="Button" />
+            <Button fx:id="button2" blendMode="SRC_ATOP" layoutX="222.0" layoutY="58.0" mnemonicParsing="false" opacity="0.0" prefHeight="174.0" prefWidth="151.0" text="Button" />
+            <Button fx:id="button3" layoutX="386.0" layoutY="62.0" mnemonicParsing="false" opacity="0.0" prefHeight="174.0" prefWidth="174.0" text="Button" />
+            <Button fx:id="button4" layoutX="586.0" layoutY="58.0" mnemonicParsing="false" opacity="0.0" prefHeight="181.0" prefWidth="200.0" text="Button" />
+            <Button fx:id="button5" layoutX="11.0" layoutY="293.0" mnemonicParsing="false" opacity="0.0" prefHeight="181.0" prefWidth="200.0" text="Button" />
+            <Button fx:id="button6" layoutX="228.0" layoutY="294.0" mnemonicParsing="false" opacity="0.0" prefHeight="181.0" prefWidth="161.0" text="Button" />
+            <Button fx:id="button7" layoutX="410.0" layoutY="293.0" mnemonicParsing="false" opacity="0.0" prefHeight="181.0" prefWidth="161.0" text="Button" />
+            <Button fx:id="button8" layoutX="586.0" layoutY="294.0" mnemonicParsing="false" opacity="0.0" prefHeight="181.0" prefWidth="200.0" text="Button" />
+            <Label layoutX="586.0" layoutY="258.0" prefHeight="35.0" prefWidth="200.0" text="Dancing Man Code" textFill="#ff7429">
+               <font>
+                  <Font name="Lucida Bright" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="181.0" fitWidth="200.0" layoutX="11.0" layoutY="59.0">
                <image>
-                  <Image url="@../assets/images.jpg" />
+                  <Image url="@../assets/Caesar's cypher.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="174.0" fitWidth="110.0" layoutX="212.0" layoutY="58.0">
+            <ImageView fitHeight="174.0" fitWidth="161.0" layoutX="410.0" layoutY="63.0">
                <image>
-                  <Image url="@../assets/civilWar.jpg" />
+                  <Image url="@../assets/Baconian.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="174.0" fitWidth="161.0" layoutX="533.0" layoutY="58.0">
+            <ImageView fitHeight="174.0" fitWidth="200.0" layoutX="586.0" layoutY="61.0">
                <image>
-                  <Image url="@../assets/Без%20названия.jpg" />
+                  <Image url="@../assets/ROT13.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="174.0" fitWidth="174.0" layoutX="339.0" layoutY="61.0">
+            <ImageView fitHeight="181.0" fitWidth="151.0" layoutX="231.0" layoutY="58.0">
                <image>
-                  <Image url="@../assets/images%20(1).jpg" />
+                  <Image url="@../assets/14927e697e6026667e416cafa35e2c65.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="civilWarButton" blendMode="SRC_ATOP" layoutX="212.0" layoutY="58.0" mnemonicParsing="false" prefHeight="174.0" prefWidth="110.0" text="Button" visible="false" />
-            <Button fx:id="WWButton" layoutX="339.0" layoutY="61.0" mnemonicParsing="false" prefHeight="174.0" prefWidth="174.0" text="Button" visible="false" />
-            <Button fx:id="ussrButton" layoutX="533.0" layoutY="58.0" mnemonicParsing="false" prefHeight="174.0" prefWidth="161.0" text="Button" visible="false" />
+            <Label layoutX="25.0" layoutY="258.0" prefHeight="35.0" prefWidth="161.0" text="Vegenere Cipher" textFill="#ff7429">
+               <font>
+                  <Font name="Lucida Bright" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="181.0" fitWidth="200.0" layoutX="11.0" layoutY="293.0">
+               <image>
+                  <Image url="@../assets/Confederate_cipher_disk.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="417.0" layoutY="258.0" prefHeight="35.0" prefWidth="161.0" text="Hill Cipher" textFill="#ff7429">
+               <font>
+                  <Font name="Lucida Bright" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="181.0" fitWidth="161.0" layoutX="228.0" layoutY="293.0">
+               <image>
+                  <Image url="@../assets/encryption-of-me.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="181.0" fitWidth="161.0" layoutX="410.0" layoutY="294.0">
+               <image>
+                  <Image url="@../assets/Hill's_message_protector.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="224.0" layoutY="258.0" prefHeight="35.0" prefWidth="161.0" text="PlayFair Cipher" textFill="#ff7429">
+               <font>
+                  <Font name="Lucida Bright" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="181.0" fitWidth="200.0" layoutX="586.0" layoutY="293.0">
+               <image>
+                  <Image url="@../assets/7766b9694d5daf51ffcfa63f4f673a18.jpg" />
+               </image>
+            </ImageView>
          </children>
         </AnchorPane>
-        <Label layoutX="151.0" layoutY="21.0" prefHeight="51.0" prefWidth="441.0" text="History of Qazaqstan" textFill="#2e3348">
+        <Label layoutX="205.0" layoutY="21.0" prefHeight="51.0" prefWidth="359.0" text="Types of ciphers" textFill="#2e3348">
             <font>
                 <Font name="Lucida Bright" size="42.0" />
             </font>
         </Label>
+      <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="707.0" layoutY="13.0">
+         <image>
+            <Image url="@../assets/Cypher%20logo.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

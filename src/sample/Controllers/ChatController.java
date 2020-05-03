@@ -5,7 +5,9 @@ import java.io.ObjectInputStream;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.PriorityQueue;
 import java.util.ResourceBundle;
+import java.util.TreeMap;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -37,6 +39,12 @@ public class ChatController extends Application {
     private Button button1;
 
     @FXML
+    private Button button2;
+
+    @FXML
+    private Button button3;
+
+    @FXML
     private Label login;
 
     @FXML
@@ -50,6 +58,21 @@ public class ChatController extends Application {
 
     @FXML
     private TableColumn<User, String> columnID;
+
+    @FXML
+    private Button vButton;
+
+    @FXML
+    private Button dvButton;
+
+    @FXML
+    private Button sButton;
+
+    @FXML
+    private Button dsButton;
+
+    @FXML
+    private TextField keyField;
 
     @FXML
     private TableColumn<User, String> columnNick;
@@ -80,6 +103,202 @@ public class ChatController extends Application {
     public void stop() throws Exception {
         connection.closeConnection();
     }
+    static PriorityQueue<Node> nodes = new PriorityQueue<>((o1, o2) -> (o1.value < o2.value) ? -1 : 1);
+    static TreeMap<Character, String> codes = new TreeMap<>();
+    static String text = "";
+    static String encoded = "";
+    static String decoded = "";
+    static int ASCII[] = new int[128];
+    class Node {
+        Node left, right;
+        double value;
+        String character;
+
+        public Node(double value, String character) {
+            this.value = value;
+            this.character = character;
+            left = null;
+            right = null;
+        }
+
+        public Node(Node left, Node right) {
+            this.value = left.value + right.value;
+            character = left.character + right.character;
+            if (left.value < right.value) {
+                this.right = right;
+                this.left = left;
+            } else {
+                this.right = left;
+                this.left = right;
+            }
+        }
+    }
+
+    static String generateKey(String str, String key)
+    {
+        int x = str.length();
+
+        for (int i = 0; ; i++)
+        {
+            if (x == i)
+                i = 0;
+            if (key.length() == str.length())
+                break;
+            key+=(key.charAt(i));
+        }
+        return key;
+    }
+
+    // This function returns the encrypted text
+// generated with the help of the key
+    static String cipherText(String str, String key)
+    {
+        String cipher_text="";
+
+        for (int i = 0; i < str.length(); i++)
+        {
+            // converting in range 0-25
+            int x = (str.charAt(i) + key.charAt(i)) %26;
+
+            // convert into alphabets(ASCII)
+            x += 'A';
+
+            cipher_text+=(char)(x);
+        }
+        return cipher_text;
+    }
+
+    // This function decrypts the encrypted text
+// and returns the original text
+    static String originalText(String cipher_text, String key)
+    {
+        String orig_text="";
+
+        for (int i = 0 ; i < cipher_text.length() &&
+                i < key.length(); i++)
+        {
+            // converting in range 0-25
+            int x = (cipher_text.charAt(i) -
+                    key.charAt(i) + 26) %26;
+
+            // convert into alphabets(ASCII)
+            x += 'A';
+            orig_text+=(char)(x);
+        }
+        return orig_text;
+    }
+
+    public String deCeasarCipher(String str1, int shift) {
+        int i, n;
+        String str2="";
+        char ch4;
+        char ch2[]=str1.toCharArray();
+        for(i=0;i<str1.length();i++)
+        {
+            if(Character.isLetter(ch2[i]))
+            {
+                if(((int)ch2[i]-shift)<97)
+                {
+                    ch4=(char)(((int)ch2[i]-shift-97+26)%26+97);
+
+                }
+                else
+                {
+                    ch4=(char)(((int)ch2[i]-shift-97)%26+97);
+                }
+                str2=str2+ch4;
+            }
+
+            else if(ch2[i]==' ')
+            {
+                str2=str2+ch2[i];
+            }
+        }
+        return str2;
+    }
+    public String CeasarCipher(String str) {
+        int shift,i,n;
+        String str1="";
+        String str2="";
+        str=str.toLowerCase();
+        n = str.length();
+        char ch1[]=str.toCharArray();
+        char ch3,ch4;
+        shift=3;
+
+        System.out.println();
+        System.out.println("Encrypted text is");
+        for(i=0;i<n;i++)
+        {
+            if(Character.isLetter(ch1[i]))
+            {
+                ch3=(char)(((int)ch1[i]+shift-97)%26+97);
+                //System.out.println(ch1[i]+" = "+ch3);
+                str1=str1+ch3;
+            }
+            else if(ch1[i]==' ')
+            {
+                str1=str1+ch1[i];
+            }
+        }
+        return str1;
+    }
+    private void encodeText() {
+        encoded = "";
+        for (int i = 0; i < text.length(); i++)
+            encoded += codes.get(text.charAt(i));
+        textArea.setText(encoded);
+    }
+
+    private void buildTree(PriorityQueue<Node> vector) {
+        while (vector.size() > 1)
+            vector.add(new Node(vector.poll(), vector.poll()));
+    }
+
+    private void printCodes() {
+        System.out.println("--- Printing Codes ---");
+        codes.forEach((k, v) -> System.out.println("'" + k + "' : " + v));
+    }
+
+    private void calculateCharIntervals(PriorityQueue<Node> vector, boolean printIntervals) {
+        if (printIntervals) System.out.println("Probabilities: ");
+
+        for (int i = 0; i < text.length(); i++)
+            ASCII[text.charAt(i)]++;
+
+        for (int i = 0; i < ASCII.length; i++)
+            if (ASCII[i] > 0) {
+                vector.add(new Node(ASCII[i] / (text.length() * 1.0), ((char) i) + ""));
+                if (printIntervals)
+                    System.out.println("'" + ((char) i) + "' : " + ASCII[i] / (text.length() * 1.0));
+            }
+    }
+
+    private static void generateCodes(Node node, String s) {
+        if (node != null) {
+            if (node.right != null)
+                generateCodes(node.right, s + "1");
+
+            if (node.left != null)
+                generateCodes(node.left, s + "0");
+
+            if (node.left == null && node.right == null)
+                codes.put(node.character.charAt(0), s);
+        }
+    }
+
+    boolean handleNewText(String scanner) {
+        text = scanner;
+        System.out.println("Text: " + text);
+        calculateCharIntervals(nodes, true);
+        buildTree(nodes);
+        generateCodes(nodes.peek(), "");
+
+        printCodes();
+        encodeText();
+
+        return false;
+    }
     @FXML
     void initialize() throws Exception {
         connection.startConnection();
@@ -101,8 +320,9 @@ public class ChatController extends Application {
 
 
         button.setOnAction(event -> {
+            String message2 = chatField.getText();
             String message = finalUser.getUsername()+": ";
-            message += chatField.getText();
+            message += message2;
             chatField.clear();
 
             textArea.appendText(message+"\n");
@@ -115,6 +335,44 @@ public class ChatController extends Application {
         });
         button1.setOnAction(event -> {
             openNewScene("/sample/fxml/welcome.fxml");
+        });
+        button2.setOnAction(event -> {
+            String message = chatField.getText();
+            message = deCeasarCipher(message, 3);
+            chatField.setText(message);
+        });
+        button3.setOnAction(event -> {
+            String message = chatField.getText();
+            message = CeasarCipher(message);
+            chatField.setText(message);
+        });
+
+        vButton.setOnAction(event -> {
+            String message = chatField.getText();
+            String keyword = keyField.getText();
+            String key = generateKey(message, keyword);
+            message = cipherText(message, key);
+            chatField.setText(message);
+        });
+
+        dvButton.setOnAction(event -> {
+            String message = chatField.getText();
+            String keyword = keyField.getText();
+            String key = generateKey(message, keyword);
+            message = originalText(message, key);
+            chatField.setText(message);
+        });
+        dvButton.setOnAction(event -> {
+            String message = chatField.getText();
+            String keyword = keyField.getText();
+            String key = generateKey(message, keyword);
+            message = originalText(message, key);
+            chatField.setText(message);
+        });
+
+        sButton.setOnAction(event -> {
+            String scanner = chatField.getText();
+            handleNewText(scanner);
         });
     }
 

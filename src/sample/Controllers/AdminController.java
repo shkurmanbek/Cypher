@@ -14,6 +14,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import sample.User;
 
+import javax.swing.*;
+
 public class AdminController {
 
     @FXML
@@ -41,6 +43,9 @@ public class AdminController {
     private Button homeButton;
 
     @FXML
+    private Button comButton;
+
+    @FXML
     void initialize() {
         User user = new User();
         try {
@@ -64,6 +69,10 @@ public class AdminController {
         infButton.setOnAction(event -> {
             openNewScene("/sample/fxml/app.fxml");
         });
+
+        comButton.setOnAction(event -> {
+            openNewScene("/sample/fxml/shannonFano.fxml");
+        });
     }
     public void openNewScene(String window){
         homeButton.getScene().getWindow().hide();
@@ -75,7 +84,6 @@ public class AdminController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         Parent root = loader.getRoot();
         Stage stage = new Stage();
